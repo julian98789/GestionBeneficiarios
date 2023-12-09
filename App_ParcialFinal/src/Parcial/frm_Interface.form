@@ -200,6 +200,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="NO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_estadoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_puntaje">
         </Component>
@@ -223,9 +226,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn_guardar" min="-2" pref="125" max="-2" attributes="0"/>
                   <EmptySpace pref="28" max="32767" attributes="0"/>
-                  <Component id="btn_consultar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_atendido" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btn_mostrar_registros" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_consultar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -236,8 +239,8 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_guardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_atendido" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_consultar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_mostrar_registros" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -252,22 +255,31 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_guardarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_atendido">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenes/comprobado.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Atendido"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_atendidoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_consultar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/buscar.png"/>
+              <Image iconType="3" name="/imagenes/mostrar (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn_mostrar_registros">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/mostrar (1).png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Mostrar registros"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

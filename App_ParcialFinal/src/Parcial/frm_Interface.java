@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Parcial;
 
-/**
- *
- * @author julian
- */
+
 public class frm_Interface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frm_Interface
-     */
+    cls_funciones obj_funcion = new cls_funciones();
     public frm_Interface() {
         initComponents();
     }
@@ -39,8 +31,8 @@ public class frm_Interface extends javax.swing.JFrame {
         txt_puntaje = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btn_guardar = new javax.swing.JButton();
+        btn_atendido = new javax.swing.JButton();
         btn_consultar = new javax.swing.JButton();
-        btn_mostrar_registros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +76,11 @@ public class frm_Interface extends javax.swing.JFrame {
         jLabel5.setText("Estado:");
 
         txt_estado.setText("NO");
+        txt_estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_estadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -132,12 +129,27 @@ public class frm_Interface extends javax.swing.JFrame {
 
         btn_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guardar.png"))); // NOI18N
         btn_guardar.setText("Guardar");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
 
-        btn_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
+        btn_atendido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado.png"))); // NOI18N
+        btn_atendido.setText("Atendido");
+        btn_atendido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atendidoActionPerformed(evt);
+            }
+        });
+
+        btn_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrar (1).png"))); // NOI18N
         btn_consultar.setText("Consultar");
-
-        btn_mostrar_registros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrar (1).png"))); // NOI18N
-        btn_mostrar_registros.setText("Mostrar registros");
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -147,9 +159,9 @@ public class frm_Interface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(btn_consultar)
+                .addComponent(btn_atendido)
                 .addGap(18, 18, 18)
-                .addComponent(btn_mostrar_registros)
+                .addComponent(btn_consultar)
                 .addGap(28, 28, 28))
         );
         jPanel3Layout.setVerticalGroup(
@@ -158,8 +170,8 @@ public class frm_Interface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_guardar)
-                    .addComponent(btn_consultar)
-                    .addComponent(btn_mostrar_registros))
+                    .addComponent(btn_atendido)
+                    .addComponent(btn_consultar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -188,6 +200,27 @@ public class frm_Interface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+       obj_funcion.fnt_Agregar(txt_nombre.getText(), txt_id.getText(),txt_puntaje.getText(), txt_estado.getText());
+        
+    }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void btn_atendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atendidoActionPerformed
+       
+    }//GEN-LAST:event_btn_atendidoActionPerformed
+
+    private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
+       obj_funcion.fnt_Consultar(txt_id.getText());
+       txt_id.setText("" + obj_funcion.temporal[0]);
+       txt_nombre.setText("" + obj_funcion.temporal[1]);
+       txt_puntaje.setText("" + obj_funcion.temporal[2]);
+       txt_estado.setText("" + obj_funcion.temporal[3]);
+    }//GEN-LAST:event_btn_consultarActionPerformed
+
+    private void txt_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_estadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_estadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,9 +258,9 @@ public class frm_Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_atendido;
     private javax.swing.JButton btn_consultar;
     private javax.swing.JButton btn_guardar;
-    private javax.swing.JButton btn_mostrar_registros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
