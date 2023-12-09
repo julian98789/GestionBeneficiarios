@@ -207,7 +207,8 @@ public class frm_Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_atendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atendidoActionPerformed
-       
+        
+        obj_funcion.fnt_entrega();
     }//GEN-LAST:event_btn_atendidoActionPerformed
 
     private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed

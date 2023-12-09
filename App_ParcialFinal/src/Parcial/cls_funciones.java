@@ -54,5 +54,16 @@ public class cls_funciones {
             }
     }
    
+   public void fnt_entrega() {
+    if (!cola.isEmpty()) {
+        cls_beneficiarios beneficiario = cola.poll();
+        
+        JOptionPane.showConfirmDialog(null, "Entrega realizada para: " + beneficiario.getStr_nombre());
+        beneficiario.setStr_estado("SI");
+    } else {
+        JOptionPane.showConfirmDialog(null, "No hay beneficiarios en la cola de entrega.");
+    }
+}
+   
     
 }
